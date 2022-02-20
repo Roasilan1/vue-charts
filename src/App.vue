@@ -1,28 +1,23 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Echarts class="charts"  :seriesData="[{name:'mon',value:30},{name:'tue',value:20}]" :extraOptions="{}"></Echarts>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Echarts from '@/components/Echarts/Echarts.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  components:{
+    Echarts
+  },
+  mounted() {
+    console.log(Echarts);
+  },
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  .charts{
+    width: 400px;
+    height: 600px;
+  }
 </style>
